@@ -18,6 +18,8 @@ We are building on the data wrangling skills we learnt in STAT 545. In this assi
 
 I chose to do tasks #1 and #2. 
 
+** not that I had to render this assignment in html due to my first task. If you have any recommendations for how to avoid this I would appreciate it.
+
 # Task #1 - Character data
 
 ## For this task I am re-working some of the exercises from [this](https://github.com/STAT545-UBC-students/hw06-katiezinn/blob/master/HW_06_KZ.mdhttps://r4ds.had.co.nz/strings.html) strings worksheet from the *R for Data Science* webpage.
@@ -273,6 +275,9 @@ trees_function <- function(Volume, Girth) {
 #testing the function
 trees_function(trees)
 ```
+
+## Calculating instantaneous growth 
+
 Maybe we want to do more than work with simple trees measurements. Let's explore a dataset with more variables, how about something from my research. One thing I have to do with my research is calculate the instantaneous growth of fish in my experiment. It is calculated in the following way:
 
 instantaneous growth = ( ( LN(finial length) - LN(initial length) ) / # days of growth ) * 100
