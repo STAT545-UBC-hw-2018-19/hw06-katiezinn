@@ -313,7 +313,7 @@ Fish_data_with_rates <- data.frame(fn_ln = fn_ln, in_ln = in_ln, days = days, My
 Fish_data_with_rates$instanteneous_growth_by_length <- as.numeric(Fish_data_with_rates$instanteneous_growth_by_length)
 
 #plotting my new found data against intiial weight 
-ggplot(Fish_data_with_rates, aes(in_ln, instanteneous_growth_by_length)) + geom_point() + geom_smooth(method=loess) + theme_classic
+ggplot(Fish_data_with_rates, aes(in_ln, instanteneous_growth_by_length)) + geom_point() + geom_smooth(method=loess) + theme_classic()
 ```
 WOW IT ACTUALLY WORKED. That took me a lot longer than i'd like to admit. Working with 3 inputs was more difficult than I expected. I couldn't get this code to work for a long time as I didn't realize there needed to be a return function.
 
