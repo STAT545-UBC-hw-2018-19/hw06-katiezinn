@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>HW_06_KZ</title>
+
+<script src="HW_06_KZ_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="HW_06_KZ_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="HW_06_KZ_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="HW_06_KZ_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="HW_06_KZ_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="HW_06_KZ_files/navigation-1.1/tabsets.js"></script>
+<link href="HW_06_KZ_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="HW_06_KZ_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="HW_06_KZ_files/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="HW_06_KZ_files/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="HW_06_KZ_files/str_view-binding-1.3.1/str_view.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">HW_06_KZ</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#homework-06-data-wrangling-wrap-up">Homework 06: Data wrangling wrap up</a></li>
+<li><a href="#task-1---character-data">Task #1 - Character data</a></li>
+<li><a href="#tast-2---writing-functions">Tast #2 - Writing functions</a></li>
+</ul>
+</div>
+
+<div id="homework-06-data-wrangling-wrap-up" class="section level1">
+<h1>Homework 06: Data wrangling wrap up</h1>
+<p>Welcome to my 6th homework assignment. In this assignment I will complete two tasks of six available. We are building on the data wrangling skills we learnt in STAT 545. In this assignment we <em>move on</em> from <strong>plyr</strong> and introduce tools such as <strong>purrr</strong>. I will also be wrangling the heck out of some <strong>strings</strong>.</p>
+<p>I chose to do tasks #1 and #2.</p>
+</div>
+<div id="task-1---character-data" class="section level1">
+<h1>Task #1 - Character data</h1>
+<p>For this task I am re-working some of the exercises from <a href="https://github.com/STAT545-UBC-students/hw06-katiezinn/blob/master/HW_06_KZ.mdhttps://r4ds.had.co.nz/strings.html">this</a> strings worksheet from the <em>R for Data Science</em> webpage.</p>
+<p>Before I start I want to mention something that I found while trying to determine which dataset I wanted to use for this assignment. When you type the function <strong>data()</strong> you get a list of all the pre-loaded data in R. I think this will be quite useful for me in future assignments.</p>
+<p>Anyway, here we go! I will be using the <strong>stringr</strong> package because it is the most applicable built in dataset for working with strings (has functions and data.</p>
+<pre class="r"><code>#loading packages required for this task
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ───────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.6
+## ✔ tidyr   0.8.1     ✔ stringr 1.3.1
+## ✔ readr   1.1.1     ✔ forcats 0.3.0</code></pre>
+<pre><code>## ── Conflicts ──────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<p>Now I am going to make a string</p>
+<pre class="r"><code>My_String &lt;- &quot;A dog went for a walk in the park&quot;
+
+#tesing out my string
+My_String</code></pre>
+<pre><code>## [1] &quot;A dog went for a walk in the park&quot;</code></pre>
+<p>The <strong>stringr</strong> functions all start with <em>str_</em>. If you type out <em>str_</em> R should automatically give you some options for functions in a list. I will give some examples below.</p>
+<p>Here is an example of a function you can use to analyze your string</p>
+<pre class="r"><code>#tells you the number of characters in a string
+str_length(My_String)</code></pre>
+<pre><code>## [1] 33</code></pre>
+<p>Now we are going to explore using more than one string. I will create another string and see what we can do when we have 2 strings that we want to work with.</p>
+<pre class="r"><code>My_String2 &lt;- &quot;A cat sat on the couch in the house&quot;
+
+#These are the 2 strings I will use
+
+My_String</code></pre>
+<pre><code>## [1] &quot;A dog went for a walk in the park&quot;</code></pre>
+<pre class="r"><code>My_String2</code></pre>
+<pre><code>## [1] &quot;A cat sat on the couch in the house&quot;</code></pre>
+<p>Now we will combine these strings and see what we get.</p>
+<pre class="r"><code>str_c(My_String, My_String2)</code></pre>
+<pre><code>## [1] &quot;A dog went for a walk in the parkA cat sat on the couch in the house&quot;</code></pre>
+<p>It looks like the function simply stuck the two strings together. Now we will add some arguments to make our new string more readable.</p>
+<pre class="r"><code>#adding sep to determine how the strings are separated
+str_c(My_String, My_String2, sep = &quot;, and &quot;)</code></pre>
+<pre><code>## [1] &quot;A dog went for a walk in the park, and A cat sat on the couch in the house&quot;</code></pre>
+<p>Nice! Now we have a sentence that has some better structue. Now I am going to make the “A” before cat a lowercase letter.</p>
+<pre class="r"><code>#making the string lowercase
+Lower_My_String2 &lt;- str_to_lower(My_String2)
+
+str_c(My_String, Lower_My_String2, sep = &quot;, and &quot;)</code></pre>
+<pre><code>## [1] &quot;A dog went for a walk in the park, and a cat sat on the couch in the house&quot;</code></pre>
+<p>Now we are going to play with more than 2 strings. The strings I am going to use are going to have multiple options for each part.</p>
+<pre class="r"><code>#making vectors of lists
+name &lt;- c(&quot;Amy&quot;, &quot;Adam&quot;, &quot;Angus&quot;, &quot;Anton&quot;)
+
+pet &lt;- c(&quot;dinosaur&quot;, &quot;dragon&quot;, &quot;unicorn&quot;, &quot;dog&quot;)
+
+day &lt;- c(&quot;today&quot;, &quot;tomorrow&quot;)
+
+#combining to form strings
+str_c(
+  &quot;Hello &quot;, name, &quot;, I really like your pet &quot;, pet,
+  &quot;. I hope I can meet it &quot;, day, &quot;.&quot;
+)</code></pre>
+<pre><code>## [1] &quot;Hello Amy, I really like your pet dinosaur. I hope I can meet it today.&quot;  
+## [2] &quot;Hello Adam, I really like your pet dragon. I hope I can meet it tomorrow.&quot;
+## [3] &quot;Hello Angus, I really like your pet unicorn. I hope I can meet it today.&quot; 
+## [4] &quot;Hello Anton, I really like your pet dog. I hope I can meet it tomorrow.&quot;</code></pre>
+<p>Looking at the output from above, we can see how R handles the strings. <strong>name</strong> and <strong>pet</strong> both have 4 objects while <strong>day</strong> has 2. <strong>Stringr</strong> matches the first object of each string together, and if there isn’t an even amount of objects in each string it will cycle through the string with less objects in it, notice how “today” and “tomorrow” are used twice in the output.</p>
+<p>The next thing I will practice is matching. using the <em>str_view</em> function we can search for certain patterns in a string. Once again… tryng to use some <sub>interesting</sub> lists as generated by the people around me to keep my reader engaged.</p>
+<pre class="r"><code># I will create a new string for this exercise
+RANDO_ANIMALS &lt;- c(&quot;orca&quot;, &quot;panther&quot;, &quot;cougar&quot;, &quot;cuddlefish&quot;, &quot;anglerfish&quot;, &quot;husky&quot;, &quot;steelhead&quot;)</code></pre>
+<p><em>“What is a peacock spider”</em>, you may ask. Click <a href="https://www.youtube.com/watch?v=d_yYC5r8xMI">here</a> to take a break from grading my assignment and see something COOL.</p>
+<p>BACK TO WORK. Say we are interested in seeing which characters have letters <strong>ae</strong> in them. Let’s use the <strong>str_view</strong> function.</p>
+<pre class="r"><code>#looking for characters with letter *a*
+str_view(RANDO_ANIMALS, &quot;a&quot;)</code></pre>
+<div id="htmlwidget-74a2c13df861920f8508" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-74a2c13df861920f8508">{"x":{"html":"<ul>\n  <li>orc<span class='match'>a<\/span><\/li>\n  <li>p<span class='match'>a<\/span>nther<\/li>\n  <li>coug<span class='match'>a<\/span>r<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhe<span class='match'>a<\/span>d<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#looking for characters with *an*
+str_view(RANDO_ANIMALS, &quot;an&quot;)</code></pre>
+<div id="htmlwidget-783371a1e747b4ee7d71" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-783371a1e747b4ee7d71">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>p<span class='match'>an<\/span>ther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>an<\/span>glerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#looking for characters with *o* and one letter on either side
+str_view(RANDO_ANIMALS, &quot;.o.&quot;)</code></pre>
+<div id="htmlwidget-e8a702b995f73533eb57" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e8a702b995f73533eb57">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panther<\/li>\n  <li><span class='match'>cou<\/span>gar<\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#looking for an *a* at the beginning of a string
+str_view(RANDO_ANIMALS, &quot;^a&quot;)</code></pre>
+<div id="htmlwidget-90f22bdc528f1102b73d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-90f22bdc528f1102b73d">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#looking for an *a* at the end of a string
+str_view(RANDO_ANIMALS, &quot;a$&quot;)</code></pre>
+<div id="htmlwidget-987b75b419aff2456680" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-987b75b419aff2456680">{"x":{"html":"<ul>\n  <li>orc<span class='match'>a<\/span><\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#how many words start with a vowel?
+str_view(RANDO_ANIMALS, &quot;^[aeiou]&quot;)</code></pre>
+<div id="htmlwidget-720c8b5f29869cfa2395" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-720c8b5f29869cfa2395">{"x":{"html":"<ul>\n  <li><span class='match'>o<\/span>rca<\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#how many words end with only consonants?
+str_view(RANDO_ANIMALS, &quot;[^aeiou]$&quot;)</code></pre>
+<div id="htmlwidget-14969514bc77ced06d4b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-14969514bc77ced06d4b">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panthe<span class='match'>r<\/span><\/li>\n  <li>couga<span class='match'>r<\/span><\/li>\n  <li>cuddlefis<span class='match'>h<\/span><\/li>\n  <li>anglerfis<span class='match'>h<\/span><\/li>\n  <li>husk<span class='match'>y<\/span><\/li>\n  <li>steelhea<span class='match'>d<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#how many words end with *ar* or *er*?
+str_view(RANDO_ANIMALS, &quot;(ar|er)$&quot;)</code></pre>
+<p><div id="htmlwidget-1eb125c137adbf8e4d87" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1eb125c137adbf8e4d87">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panth<span class='match'>er<\/span><\/li>\n  <li>coug<span class='match'>ar<\/span><\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> What if we want to look for somethig that isn’t a letter?</p>
+<pre class="r"><code>#creating my string
+Alternative_String &lt;- c(&quot;xyz&quot;, &quot;x.y&quot;, &quot;x%y&quot;, &quot;y z&quot;, &quot;z[#]x&quot;)
+
+#viewing the character with any letter, a period, then a y
+str_view(Alternative_String, &quot;.[.]y&quot;)</code></pre>
+<div id="htmlwidget-8a1b0b25eb423895c544" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8a1b0b25eb423895c544">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li><span class='match'>x.y<\/span><\/li>\n  <li>x%y<\/li>\n  <li>y z<\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#viewing the character with an x, %, then any letter 
+str_view(Alternative_String, &quot;x[%].&quot;)</code></pre>
+<div id="htmlwidget-e5bc3897c7c47872d0ca" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e5bc3897c7c47872d0ca">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li><span class='match'>x%y<\/span><\/li>\n  <li>y z<\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#viewing the character with any letter, #, and any letter
+str_view(Alternative_String, &quot;.[#].&quot;)</code></pre>
+<div id="htmlwidget-b23de9bb9c523f14b7db" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b23de9bb9c523f14b7db">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li>x%y<\/li>\n  <li>y z<\/li>\n  <li>z<span class='match'>[#]<\/span>x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>#viewing the character with a space between any two letters
+str_view(Alternative_String, &quot;.[ ].&quot;)</code></pre>
+<div id="htmlwidget-ac42df411241bde76a13" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ac42df411241bde76a13">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li>x%y<\/li>\n  <li><span class='match'>y z<\/span><\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Now, we we will apply some of the skills we have learnt in more of an applicable way to real life. We will be using <strong>str_detect()</strong> to see if a character vector matches a pattern.</p>
+<pre class="r"><code>#How many a&#39;s are there in the RANDO_ANIMALS vector?
+sum(str_detect(RANDO_ANIMALS, &quot;a&quot;))</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>#How many characters in the RANDO_ANIMALS vector START with a?
+sum(str_detect(RANDO_ANIMALS, &quot;^a&quot;))</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>#what proportion of the words in RANDO_ANIMALS have an *a* in them?
+mean(str_detect(RANDO_ANIMALS, &quot;a&quot;))</code></pre>
+<pre><code>## [1] 0.7142857</code></pre>
+<p>Now I am going to work with the <strong>words</strong> vector to increase my diversity of words to work with.</p>
+<pre class="r"><code>#get a glimpse of the vector
+head(words)</code></pre>
+<pre><code>## [1] &quot;a&quot;        &quot;able&quot;     &quot;about&quot;    &quot;absolute&quot; &quot;accept&quot;   &quot;account&quot;</code></pre>
+<p>Let’s figure out which words in the <strong>words</strong> vector start with a <strong>y</strong></p>
+<pre class="r"><code>words[str_detect(words, &quot;^y&quot;)]</code></pre>
+<pre><code>## [1] &quot;year&quot;      &quot;yes&quot;       &quot;yesterday&quot; &quot;yet&quot;       &quot;you&quot;       &quot;young&quot;</code></pre>
+<p>Now,let’s make things a little more complicated and work with some senteces. We will be using the <strong>sentences</strong> dataset found in the <strong>stringr</strong> package (in the tidyverse)</p>
+<pre class="r"><code>#checking it out
+head(sentences)</code></pre>
+<pre><code>## [1] &quot;The birch canoe slid on the smooth planks.&quot; 
+## [2] &quot;Glue the sheet to the dark blue background.&quot;
+## [3] &quot;It&#39;s easy to tell the depth of a well.&quot;     
+## [4] &quot;These days a chicken leg is a rare dish.&quot;   
+## [5] &quot;Rice is often served in round bowls.&quot;       
+## [6] &quot;The juice of lemons makes fine punch.&quot;</code></pre>
+<p>What if we want to see which sentences have FISH of our choosing in it?</p>
+<pre class="r"><code>#create a vector
+fish &lt;- c(&quot;fish&quot;, &quot;trout&quot;, &quot;salmon&quot;)
+
+#turn it into a single regular expression
+fish_match &lt;- str_c(fish, collapse = &quot;|&quot;)
+
+#check it out
+fish_match</code></pre>
+<pre><code>## [1] &quot;fish|trout|salmon&quot;</code></pre>
+<pre class="r"><code>#checking which sentences have these animals 
+has_fish &lt;- str_subset(sentences, fish_match)
+
+#check it out
+has_fish</code></pre>
+<pre><code>## [1] &quot;A rod is used to catch pink salmon.&quot;          
+## [2] &quot;The fish twisted and turned on the bent hook.&quot;
+## [3] &quot;Two blue fish swam in the tank.&quot;              
+## [4] &quot;The lure is used to catch trout and flounder.&quot;
+## [5] &quot;Whitings are small fish caught in nets.&quot;</code></pre>
+<p>We found a way to sift through all of the sentences and pull out the ones with key words of our choosing, very neat.</p>
+<p>Cool! Now that we have learnt a lot and have gotten comfy working with strings let’s move on to creating a function!</p>
+</div>
+<div id="tast-2---writing-functions" class="section level1">
+<h1>Tast #2 - Writing functions</h1>
+<p>This is the 2nd part of my assignment. For this task I will be creating a function that does something useful to the <strong>trees</strong> dataset.</p>
+<p>I did my undergrad in forestry so I think I can create a meaningful function for this data. Let’s check it out!</p>
+<pre class="r"><code>head(trees)</code></pre>
+<pre><code>##   Girth Height Volume
+## 1   8.3     70   10.3
+## 2   8.6     65   10.3
+## 3   8.8     63   10.2
+## 4  10.5     72   16.4
+## 5  10.7     81   18.8
+## 6  10.8     83   19.7</code></pre>
+<pre class="r"><code>?trees</code></pre>
+<p>This dataset provies the girth (diameter at DBH (diameter at breast height), which is 4 ft 6 in from the base of the tree), height, and volume of 31 black cherry trees.</p>
+<p>Let’s create a function to determine if girth at DBH can help us determine the volume of a tree.</p>
+<pre class="r"><code>#downloading packages I may use for this task
+library(tidyverse)</code></pre>
+<p>First, let’s plot the data to see what we are working with. It is always a good idea to visualize the data before making any manipulations</p>
+<pre class="r"><code>ggplot(trees, aes(Girth, Volume)) + geom_point() + geom_smooth(method=loess) + theme_classic() +
+   ggtitle(&quot;Tree Volume vs Girth&quot;) +
+    xlab(&quot;Girth (diameter in inches)&quot;) +
+    ylab(&quot;Volume (cubic feet)&quot;)</code></pre>
+<p><img src="HW_06_KZ_files/figure-html/unnamed-chunk-19-1.png" /><!-- --></p>
+<p>Now I am going to create the linear function that predicts volume from girth.</p>
+<pre class="r"><code>#fitting my function (single factor ANOVA)
+trees_lm &lt;- lm(Volume ~ Girth, data = trees)
+
+#let&#39;s check out a summary of my function (ignore these p-values)
+summary(trees_lm)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Volume ~ Girth, data = trees)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -8.065 -3.107  0.152  3.495  9.587 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -36.9435     3.3651  -10.98 7.62e-12 ***
+## Girth         5.0659     0.2474   20.48  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.252 on 29 degrees of freedom
+## Multiple R-squared:  0.9353, Adjusted R-squared:  0.9331 
+## F-statistic: 419.4 on 1 and 29 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code># I am going to use the anova() function to test my hypotheses that volume is predicted by girth.
+anova(trees_lm)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: Volume
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## Girth      1 7581.8  7581.8  419.36 &lt; 2.2e-16 ***
+## Residuals 29  524.3    18.1                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>I realize that this wasn’t part of the assignment but how can you fit a linear model and not check it’s significance!? The P value is less than 0.05… IT IS SIGNIFICANT!</p>
+<p>Now we are going to turn this code into a function.</p>
+<pre class="r"><code>#creating my function
+trees_function &lt;- function(Volume, Girth) {
+  trees_lm &lt;- lm(Volume ~ Girth, data = trees)
+  setNames(coef(trees_lm), c(&quot;intercept&quot;, &quot;slope&quot;))
+}
+
+#testing the function
+trees_function(trees)</code></pre>
+<pre><code>##  intercept      slope 
+## -36.943459   5.065856</code></pre>
+<p>Maybe we want to do more than work with simple trees measurements. Let’s explore a dataset with more variables, how about something from my research. One thing I have to do with my research is calculate the instantaneous growth of fish in my experiment. It is calculated in the following way:</p>
+<p>instantaneous growth = ( ( LN(finial length) - LN(initial length) ) / # days of growth ) * 100</p>
+<p>Now I am going to make a data frame that we can work with.</p>
+<pre class="r"><code>#final length
+fn_ln &lt;- c(145.5, 147, 132, 127, 150.5, 153.5, 131.5, 148.5, 152.5, 128)
+
+#initial length
+in_ln &lt;- c(137, 135, 120, 118, 140, 116, 131, 137, 144, 119)
+
+#number of days since last capture
+days &lt;- c(30, 30, 30, 30, 33, 33, 33, 33, 33, 47)
+
+Fish_data &lt;- data.frame(fn_ln = fn_ln, in_ln = in_ln, days = days, stringsAsFactors = FALSE)</code></pre>
+<p>I am going to attempt to have multiple inputs and outputs… let’s see if I can pull this off.</p>
+<pre class="r"><code>#creating my function
+instantaneous_growth &lt;- function(f, i, d) {
+ growth &lt;- ((log(f) - log(i)) / d)*100
+return(list(instanteneous_growth_by_length = growth))
+}
+
+#testing my functin
+instantaneous_growth(Fish_data$fn_ln, Fish_data$in_ln, Fish_data$days)</code></pre>
+<pre><code>## $instanteneous_growth_by_length
+##  [1] 0.20065054 0.28385936 0.31770060 0.24500821 0.21915352 0.84881932
+##  [7] 0.01154403 0.24425464 0.17379181 0.15512079</code></pre>
+<p>WOW IT ACTUALLY WORKED. That took me a lot longer than i’d like to admit. Working with 3 inputs was more difficult than I expected. I couldn’t get this code to work for a long time as I didn’t realize there needed to be a return function.</p>
+<p>It feels pretty awesome to have created a function that can be used with my data that I have collected for my thesis. It took a long time to construct this function but I am glad I did it as I will actually be able to use it in the future :)</p>
+<p>With this function I can now quickly zip in my data to get instantaneous growth for my fish. YAHOO.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
