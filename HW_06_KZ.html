@@ -11,7 +11,7 @@
 
 
 
-<title>HW_06_KZ</title>
+<title>Katie’s 6th homework assignment for STAT 545/547</title>
 
 <script src="HW_06_KZ_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -123,7 +123,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">HW_06_KZ</h1>
+<h1 class="title toc-ignore">Katie’s 6th homework assignment for STAT 545/547</h1>
 
 </div>
 
@@ -213,55 +213,55 @@ RANDO_ANIMALS &lt;- c(&quot;orca&quot;, &quot;panther&quot;, &quot;cougar&quot;,
 <p>BACK TO WORK. Say we are interested in seeing which characters have letters <strong>ae</strong> in them. Let’s use the <strong>str_view</strong> function.</p>
 <pre class="r"><code>#looking for characters with letter *a*
 str_view(RANDO_ANIMALS, &quot;a&quot;)</code></pre>
-<div id="htmlwidget-8fb0a4751ad9a6f78b5c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8fb0a4751ad9a6f78b5c">{"x":{"html":"<ul>\n  <li>orc<span class='match'>a<\/span><\/li>\n  <li>p<span class='match'>a<\/span>nther<\/li>\n  <li>coug<span class='match'>a<\/span>r<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhe<span class='match'>a<\/span>d<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-07c59e55bcb9fdaa43b3" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-07c59e55bcb9fdaa43b3">{"x":{"html":"<ul>\n  <li>orc<span class='match'>a<\/span><\/li>\n  <li>p<span class='match'>a<\/span>nther<\/li>\n  <li>coug<span class='match'>a<\/span>r<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhe<span class='match'>a<\/span>d<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#looking for characters with *an*
 str_view(RANDO_ANIMALS, &quot;an&quot;)</code></pre>
-<div id="htmlwidget-2ba647689ce7d065afe1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2ba647689ce7d065afe1">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>p<span class='match'>an<\/span>ther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>an<\/span>glerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c963485e69e718578d40" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c963485e69e718578d40">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>p<span class='match'>an<\/span>ther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>an<\/span>glerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#looking for characters with *o* and one letter on either side
 str_view(RANDO_ANIMALS, &quot;.o.&quot;)</code></pre>
-<div id="htmlwidget-86c2edf467e04c3626bd" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-86c2edf467e04c3626bd">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panther<\/li>\n  <li><span class='match'>cou<\/span>gar<\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a80965d12ca65cd352fa" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a80965d12ca65cd352fa">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panther<\/li>\n  <li><span class='match'>cou<\/span>gar<\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#looking for an *a* at the beginning of a string
 str_view(RANDO_ANIMALS, &quot;^a&quot;)</code></pre>
-<div id="htmlwidget-6427d2b55d15388d616c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6427d2b55d15388d616c">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-702b629013a42d73df29" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-702b629013a42d73df29">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#looking for an *a* at the end of a string
 str_view(RANDO_ANIMALS, &quot;a$&quot;)</code></pre>
-<div id="htmlwidget-68942a52f1843bac92fe" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-68942a52f1843bac92fe">{"x":{"html":"<ul>\n  <li>orc<span class='match'>a<\/span><\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8a4fefccc629395c281f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8a4fefccc629395c281f">{"x":{"html":"<ul>\n  <li>orc<span class='match'>a<\/span><\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#how many words start with a vowel?
 str_view(RANDO_ANIMALS, &quot;^[aeiou]&quot;)</code></pre>
-<div id="htmlwidget-0183300368c0a569523e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0183300368c0a569523e">{"x":{"html":"<ul>\n  <li><span class='match'>o<\/span>rca<\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ebf594dbeb3042245c97" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ebf594dbeb3042245c97">{"x":{"html":"<ul>\n  <li><span class='match'>o<\/span>rca<\/li>\n  <li>panther<\/li>\n  <li>cougar<\/li>\n  <li>cuddlefish<\/li>\n  <li><span class='match'>a<\/span>nglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#how many words end with only consonants?
 str_view(RANDO_ANIMALS, &quot;[^aeiou]$&quot;)</code></pre>
-<div id="htmlwidget-25eb23d56f8f0a136824" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-25eb23d56f8f0a136824">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panthe<span class='match'>r<\/span><\/li>\n  <li>couga<span class='match'>r<\/span><\/li>\n  <li>cuddlefis<span class='match'>h<\/span><\/li>\n  <li>anglerfis<span class='match'>h<\/span><\/li>\n  <li>husk<span class='match'>y<\/span><\/li>\n  <li>steelhea<span class='match'>d<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4c7e9111667e56a304e6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4c7e9111667e56a304e6">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panthe<span class='match'>r<\/span><\/li>\n  <li>couga<span class='match'>r<\/span><\/li>\n  <li>cuddlefis<span class='match'>h<\/span><\/li>\n  <li>anglerfis<span class='match'>h<\/span><\/li>\n  <li>husk<span class='match'>y<\/span><\/li>\n  <li>steelhea<span class='match'>d<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#how many words end with *ar* or *er*?
 str_view(RANDO_ANIMALS, &quot;(ar|er)$&quot;)</code></pre>
-<p><div id="htmlwidget-59642390ebbdf6bf556a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-59642390ebbdf6bf556a">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panth<span class='match'>er<\/span><\/li>\n  <li>coug<span class='match'>ar<\/span><\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> What if we want to look for somethig that isn’t a letter?</p>
+<p><div id="htmlwidget-8ad726d372789ad6d9e1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8ad726d372789ad6d9e1">{"x":{"html":"<ul>\n  <li>orca<\/li>\n  <li>panth<span class='match'>er<\/span><\/li>\n  <li>coug<span class='match'>ar<\/span><\/li>\n  <li>cuddlefish<\/li>\n  <li>anglerfish<\/li>\n  <li>husky<\/li>\n  <li>steelhead<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script> What if we want to look for somethig that isn’t a letter?</p>
 <pre class="r"><code>#creating my string
 Alternative_String &lt;- c(&quot;xyz&quot;, &quot;x.y&quot;, &quot;x%y&quot;, &quot;y z&quot;, &quot;z[#]x&quot;)
 
 #viewing the character with any letter, a period, then a y
 str_view(Alternative_String, &quot;.[.]y&quot;)</code></pre>
-<div id="htmlwidget-b0c1f08769a1f5d87db8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b0c1f08769a1f5d87db8">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li><span class='match'>x.y<\/span><\/li>\n  <li>x%y<\/li>\n  <li>y z<\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-30a50246293721353526" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-30a50246293721353526">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li><span class='match'>x.y<\/span><\/li>\n  <li>x%y<\/li>\n  <li>y z<\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#viewing the character with an x, %, then any letter 
 str_view(Alternative_String, &quot;x[%].&quot;)</code></pre>
-<div id="htmlwidget-dfa4616eadf7f584041a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dfa4616eadf7f584041a">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li><span class='match'>x%y<\/span><\/li>\n  <li>y z<\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1dae39f13d4cbbdf3551" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1dae39f13d4cbbdf3551">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li><span class='match'>x%y<\/span><\/li>\n  <li>y z<\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#viewing the character with any letter, #, and any letter
 str_view(Alternative_String, &quot;.[#].&quot;)</code></pre>
-<div id="htmlwidget-cf3a43eec24c768f6bda" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cf3a43eec24c768f6bda">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li>x%y<\/li>\n  <li>y z<\/li>\n  <li>z<span class='match'>[#]<\/span>x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-68ebd0971fcd70eb6354" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68ebd0971fcd70eb6354">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li>x%y<\/li>\n  <li>y z<\/li>\n  <li>z<span class='match'>[#]<\/span>x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>#viewing the character with a space between any two letters
 str_view(Alternative_String, &quot;.[ ].&quot;)</code></pre>
-<div id="htmlwidget-7599c0443c717b2e48aa" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7599c0443c717b2e48aa">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li>x%y<\/li>\n  <li><span class='match'>y z<\/span><\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-479e9e78c771d5bcd648" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-479e9e78c771d5bcd648">{"x":{"html":"<ul>\n  <li>xyz<\/li>\n  <li>x.y<\/li>\n  <li>x%y<\/li>\n  <li><span class='match'>y z<\/span><\/li>\n  <li>z[#]x<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Now, we we will apply some of the skills we have learnt in more of an applicable way to real life. We will be using <strong>str_detect()</strong> to see if a character vector matches a pattern.</p>
 <pre class="r"><code>#How many a&#39;s are there in the RANDO_ANIMALS vector?
 sum(str_detect(RANDO_ANIMALS, &quot;a&quot;))</code></pre>
@@ -314,7 +314,7 @@ has_fish</code></pre>
 <div id="tast-2---writing-functions" class="section level1">
 <h1>Tast #2 - Writing functions</h1>
 <p>This is the 2nd part of my assignment. For this task I will be creating a function that does something useful to the <strong>trees</strong> dataset.</p>
-<p>I did my undergrad in forestry so I think I can create a meaningful function for this data. Let’s check it out!</p>
+<p>Working with the <strong>trees</strong> dataset wasn’t as exciting as anticipated so I also create a function that is useful for my thesis. I calculate the instantaneous growth rate for fish using a function. And somehow… I actually pulled it off.</p>
 <pre class="r"><code>head(trees)</code></pre>
 <pre><code>##   Girth Height Volume
 ## 1   8.3     70   10.3
@@ -323,7 +323,6 @@ has_fish</code></pre>
 ## 4  10.5     72   16.4
 ## 5  10.7     81   18.8
 ## 6  10.8     83   19.7</code></pre>
-<pre class="r"><code>?trees</code></pre>
 <p>This dataset provies the girth (diameter at DBH (diameter at breast height), which is 4 ft 6 in from the base of the tree), height, and volume of 31 black cherry trees.</p>
 <p>Let’s create a function to determine if girth at DBH can help us determine the volume of a tree.</p>
 <pre class="r"><code>#downloading packages I may use for this task

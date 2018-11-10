@@ -1,5 +1,5 @@
 ---
-title: "HW_06_KZ"
+title: "Katie's 6th homework assignment for STAT 545/547"
 output:
    html_document:
       self_contained: false
@@ -217,10 +217,10 @@ Cool! Now that we have learnt a lot and have gotten comfy working with strings l
 
 This is the 2nd part of my assignment. For this task I will be creating a function that does something useful to the **trees** dataset. 
 
-I did my undergrad in forestry so I think I can create a meaningful function for this data. Let's check it out!
+Working with the **trees** dataset wasn't as exciting as anticipated so I also create a function that is useful for my thesis. I calculate the instantaneous growth rate for fish using a function. And somehow... I actually pulled it off. 
+
 ```{r}
 head(trees)
-?trees
 ```
 
 This dataset provies the girth (diameter at DBH (diameter at breast height), which is 4 ft 6 in from the base of the tree), height, and volume of 31 black cherry trees. 
