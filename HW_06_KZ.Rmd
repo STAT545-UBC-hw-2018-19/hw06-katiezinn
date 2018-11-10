@@ -20,7 +20,7 @@ I chose to do tasks #1 and #2.
 
 # Task #1 - Character data
 
-For this task I am re-working some of the exercises from [this](https://github.com/STAT545-UBC-students/hw06-katiezinn/blob/master/HW_06_KZ.mdhttps://r4ds.had.co.nz/strings.html) strings worksheet from the *R for Data Science* webpage.
+## For this task I am re-working some of the exercises from [this](https://github.com/STAT545-UBC-students/hw06-katiezinn/blob/master/HW_06_KZ.mdhttps://r4ds.had.co.nz/strings.html) strings worksheet from the *R for Data Science* webpage.
 
 Before I start I want to mention something that I found while trying to determine which dataset I wanted to use for this assignment. When you type the function **data()** you get a list of all the pre-loaded data in R. I think this will be quite useful for me in future assignments.
 
@@ -215,7 +215,9 @@ Cool! Now that we have learnt a lot and have gotten comfy working with strings l
 
 # Tast #2 - Writing functions
 
-This is the 2nd part of my assignment. For this task I will be creating a function that does something useful to the **trees** dataset. 
+## This is the 2nd part of my assignment. For this task I will be creating a function.
+
+First, I will make a functino that does something useful to the **trees** dataset. 
 
 Working with the **trees** dataset wasn't as exciting as anticipated so I also create a function that is useful for my thesis. I calculate the instantaneous growth rate for fish using a function. And somehow... I actually pulled it off. 
 
