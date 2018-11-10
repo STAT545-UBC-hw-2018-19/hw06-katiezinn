@@ -1,7 +1,9 @@
 ---
 title: "HW_06_KZ"
 output:
-   github_document:
+   html_document:
+      self_contained: false
+      keep_md: true
       toc: true
 ---
 
@@ -233,10 +235,13 @@ library(tidyverse)
 First, let's plot the data to see what we are working with. It is always a good idea to visualize the data before making any manipulations
 
 ```{r}
-ggplot(trees, aes(Girth, Volume)) + geom_point() + geom_smooth(method=loess) + theme_classic() +
-   ggtitle("Tree Volume vs Girth") +
-    xlab("Girth (diameter in inches)") +
-    ylab("Volume (cubic feet)")
+ggplot(trees, aes(Girth, Volume)) + 
+  geom_point() +
+    geom_smooth(method=loess) +
+      theme_classic() +
+        ggtitle("Tree Volume vs Girth") +
+          xlab("Girth (diameter in inches)") +
+            ylab("Volume (cubic feet)")
 ```
 
 Now I am going to create the linear function that predicts volume from girth.
@@ -294,25 +299,34 @@ I am going to attempt to have multiple inputs and outputs... let's see if I can 
 ```{r}
 #creating my function
 instantaneous_growth <- function(f, i, d) {
+  #calculating that I want my function to accomplish
  growth <- ((log(f) - log(i)) / d)*100
-return(list(instanteneous_growth_by_length = growth))
+return(list(growth = growth))
 }
 
 #testing my function
 instantaneous_growth(Fish_data$fn_ln, Fish_data$in_ln, Fish_data$days)
 
 #putting the rates into a vector
-Mydata_growth_rates <- instantaneous_growth(Fish_data$fn_ln, Fish_data$in_ln, Fish_data$days)
+growth <- instantaneous_growth(Fish_data$fn_ln, Fish_data$in_ln, Fish_data$days)
 
 #adding the vector to a new data frame
-Fish_data_with_rates <- data.frame(fn_ln = fn_ln, in_ln = in_ln, days = days, Mydata_growth_rates = Mydata_growth_rates, stringsAsFactors = FALSE)
+Fish_data_with_rates <- data.frame(fn_ln = fn_ln, in_ln = in_ln, days = days, growth = growth, stringsAsFactors = FALSE)
 
 #when plotting I was getting an error, so I am making sure that Mydata_growth_rates is NUMERIC
-Fish_data_with_rates$instanteneous_growth_by_length <- as.numeric(Fish_data_with_rates$instanteneous_growth_by_length)
+growth <- as.numeric(Fish_data_with_rates$instanteneous_growth_by_length)
 
 #plotting my new found data against intiial weight 
-ggplot(Fish_data_with_rates, aes(in_ln, instanteneous_growth_by_length)) + geom_point() + geom_smooth(method=loess) + theme_classic()
+ggplot(Fish_data_with_rates, aes(in_ln, growth)) +
+  geom_point() +
+    geom_smooth(method=loess) +
+      theme_classic() +
+        ggtitle("Instantaneous growth vs initial length") +
+          xlab("Initial length (mm)") +
+            ylab("Instantaneous growth (mm/day)")
 ```
+
+
 WOW IT ACTUALLY WORKED. That took me a lot longer than i'd like to admit. Working with 3 inputs was more difficult than I expected. I couldn't get this code to work for a long time as I didn't realize there needed to be a return function.
 
 It feels pretty awesome to have created a function that can be used with my data that I have collected for my thesis. It took a long time to construct this function but I am glad I did it as I will actually be able to use it in the future :)
@@ -320,6 +334,5 @@ It feels pretty awesome to have created a function that can be used with my data
 With this function I can now quickly zip in my data to get instantaneous growth for my fish. YAHOO.
 
 It was also cool to test adding the data I calculated into a data frame with the other data that I initially had.
-
 
 
